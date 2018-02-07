@@ -1,0 +1,80 @@
+/* variables de fonts */
+@include font-face("icomoon", "../fonts/icomoon", 500, normal, eot svg woff ttf);
+
+
+/* Icones */
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-home3:before {
+  content: "\e902";
+}
+.icon-paste:before {
+  content: "\e92d";
+}
+.icon-stack:before {
+  content: "\e92e";
+}
+.icon-phone:before {
+  content: "\e942";
+}
+.icon-location:before {
+  content: "\e947";
+}
+.icon-redo2:before {
+  content: "\e968";
+}
+.icon-airplane:before {
+  content: "\e9af";
+}
+.icon-list2:before {
+  content: "\e9bb";
+}
+.icon-man-woman:before {
+  content: "\e9de";
+}
+.icon-volume-high:before {
+  content: "\ea26";
+}
+.icon-volume-medium:before {
+  content: "\ea27";
+}
+.icon-arrow-left:before {
+  content: "\ea38";
+}
+.icon-scissors:before {
+  content: "\ea5a";
+}
+.icon-ligature:before {
+  content: "\ea5d";
+}
+.icon-underline:before {
+  content: "\ea63";
+}
+.icon-vimeo2:before {
+  content: "\eaa1";
+}
+.icon-blogger:before {
+  content: "\eab7";
+}
+.icon-reddit:before {
+  content: "\eac6";
+}
+.icon-hackernews:before {
+  content: "\eac7";
+}
+.icon-wikipedia:before {
+  content: "\eac8";
+}

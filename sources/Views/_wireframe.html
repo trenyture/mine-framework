@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+{% block header %}
+	<meta charset="utf-8">
+	<title>{{ (datas.pageTitle is defined and datas.pageTitle is not empty) ? "#{datas.pageTitle} - " : "" }}U'RSELF</title>
+	<!-- FAVICON -->
+	<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="/assets/styles/vendors.min.css">
+	<link rel="stylesheet" type="text/css" href="/assets/styles/main.css">
+{% endblock %}
+</head>
+<body>
+	<main {{ (datas.bodyId is defined and datas.bodyId is not empty) ? "id='#{datas.bodyId}'" : "" }}>
+		<div class="container">
+
+			{% block topmenu %}
+				<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+					<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<a class="navbar-brand" href="/">U'RSELF</a>
+
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav mr-auto">
+							<li class="nav-item">
+								<a class="nav-link" href="/posts">Posts</a>
+							</li>
+						</ul>
+						<form class="form-inline my-2 my-lg-0">
+							<input class="form-control mr-sm-2" type="text" placeholder="Search">
+							<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+						</form>
+					</div>
+				</nav>
+			{% endblock %}
+
+			{% block content %}
+				<p> Hello World </p>
+			{% endblock %}
+
+			<footer class="row">
+				<div class="col-xs-12">
+					<p>Site réalisé par U'RSELF</p>
+				</div>
+			</footer>
+		</div> <!-- /.container -->
+
+		{% block footer %}
+			<!-- JS -->
+			<script type="text/javascript" src="/assets/scripts/vendors.min.js"></script>
+			<script type="text/javascript" src="/assets/scripts/functions.js"></script>
+			<script type="text/javascript" src="/assets/scripts/main.js"></script>
+		{% endblock %}
+	</main>
+</body>
+</html>

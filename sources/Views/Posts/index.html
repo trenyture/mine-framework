@@ -1,0 +1,21 @@
+{% extends "_wireframe.html" %}
+
+{% block content %}
+	<div class="row">
+		<section class='col-xs-6 col-sm-8'>
+			<h1>{{ datas.pageTitle }}</h1>
+			<ul>
+				{% for post in datas.posts %}
+					<li>
+						<a href="/posts/{{ post.getId() }}">
+							<h2>{{ post.getTitle() }}</h2>
+						</a>
+					</li>
+				{% else %}
+					<li>Il n'y a aucun post pour le moment. Veuillez en créer un</li>
+				{% endfor %}
+			</ul>
+			<a href="/posts/create">Créer un nouveau Post</a>
+		</section>
+	</div>
+{% endblock %}

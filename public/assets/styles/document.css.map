@@ -1,0 +1,1 @@
+{"version":3,"sources":["document.scss"],"names":[],"mappings":"AAAA,iBAEE,SAAS,CACT","file":"document.css","sourcesContent":["body#document{\n\th1{\n\t\tcolor:red;\n\t}\n}\n"]}

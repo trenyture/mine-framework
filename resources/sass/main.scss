@@ -1,0 +1,21 @@
+/* Le fichier Main.css */
+
+/* On inclut nos variables */
+@import "general/functions";
+@import "general/mixins";
+@import "general/colors";
+@import "general/dimensions";
+@import "general/fonts";
+
+body{
+	color: $noir;
+	background: $blanc;
+
+	h1{
+		color:$bleu;
+
+		&:hover{
+			color:$rose;
+		}
+	}
+}

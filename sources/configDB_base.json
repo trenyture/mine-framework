@@ -1,0 +1,6 @@
+{
+	"host": "",		//url du serveur ex: localhost
+	"bdd": "",		// nom de la base de donnée ex: marketplace
+	"user": "",		//nom d'utilisateur ex: root
+	"pass": ""		//mot de passe ex: "" (mot de passe vide)
+}

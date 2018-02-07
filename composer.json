@@ -1,0 +1,7 @@
+{
+    "name": "simon/marketplace",
+    "require": {
+        "klein/klein": "^2.1",
+        "twig/twig": "^2.0"
+    }
+}

@@ -1,0 +1,1 @@
+function formToJSON(a){var e=$(a).serializeArray(),n={};return $(e).each(function(a,e){void 0!==n[e.name]?(Array.isArray(n[e.name])||(n[e.name]=[n[e.name]]),n[e.name].push(e.value)):n[e.name]=e.value}),n}

@@ -1,0 +1,25 @@
+{% extends "_wireframe.html" %}
+
+{% block content %}
+	<div class="row">
+		<section class='col-xs-6 col-sm-8'>
+			<h1>{{ datas.pageTitle }}</h1>
+			<form id="PostEditForm">
+				<div class="form-group">
+					<label for="titleField">Titre</label>
+					<input type="text" class="form-control" name="titleField" id="titleField" placeholder="Entrer un titre" value="{{ datas.post.getTitle() }}">
+				</div>
+				<div class="form-group">
+					<label for="contentField">Contenu du Post</label>
+					<textarea class="form-control" name="contentField" id="contentField" placeholder="Entrer votre contenu">{{datas.post.getContent() }}</textarea>
+				</div>
+				<button type="submit" class="btn btn-primary">Submit</button>
+			</form>
+		</section>
+	</div>
+{% endblock %}
+
+{% block footer %}
+	{{ parent() }}
+	<script type="text/javascript" src="/assets/scripts/posts.js"></script>
+{% endblock %}

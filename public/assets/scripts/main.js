@@ -1,0 +1,1 @@
+jQuery(function(e){console.log("Bienvenue sur la Marketplace de U'RSELF!")});
