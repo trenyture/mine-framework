@@ -8,8 +8,8 @@
 				include __DIR__.'/Controllers/' . $class . '.php';
 			} elseif (file_exists(__DIR__.'/Models/' . $class . '.php')) {
 				include __DIR__.'/Models/' . $class . '.php';
-			} elseif (file_exists(__DIR__.'/Models/Managers/' . $class . '.php')) {
-				include __DIR__.'/Models/Managers/' . $class . '.php';
+			} elseif (file_exists(__DIR__.'/Managers/' . $class . '.php')) {
+				include __DIR__.'/Managers/' . $class . '.php';
 			}
 		}
 	);
