@@ -1,7 +1,8 @@
 {
     "name": "simon/marketplace",
     "require": {
-        "klein/klein": "^2.1",
-        "twig/twig": "^2.0"
+        "twig/twig": "^2.0",
+        "pecee/simple-router": "3.4.10.1",
+        "catfan/medoo": "^1.5"
     }
 }

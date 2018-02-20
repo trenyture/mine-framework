@@ -1,5 +1,5 @@
-# MINE FRAMEWORK
-Well first version I asume...
+# U'RSELF MARKETPLACE
+Relax, take it easy!
 
 ## Technologies
 - PHP 7.x
@@ -83,10 +83,8 @@ Lors du Passage en Prod il faut changer manuellement un fichier ... Ce n'est pas
 			| - fonts
 	| - resources (le développement des assets pour le FRONT END)
 		| - sass
-			| - vendors
 			| - general (dossier contenant toutes nos variables SASS)
 		| - js
-			| - vendors
 	| - sources
 		| - autoload.php (charge tous nos composants Back)
 		| - routes.php (charge toutes les routes du projet)
@@ -102,4 +100,4 @@ Lors du Passage en Prod il faut changer manuellement un fichier ... Ce n'est pas
 > Allez hop on y va, en route pour l'aventure !
 
 ## Copyright
-**© Simon Trichereau - 2017**
+**© U'RSELF - 2017**

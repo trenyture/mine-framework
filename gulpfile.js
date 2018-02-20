@@ -15,7 +15,7 @@ var refresh = require('gulp-livereload');
 var lr = require('tiny-lr');
 var server = lr();
 var browserSync = require('browser-sync').create();
-var proxyServer = 'marketplace.app';
+var proxyServer = 'www.mine-framework.dev';
 
 /*
  * minify and check syntax of all the scripts (not vendors)

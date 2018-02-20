@@ -9,12 +9,12 @@ jQuery(function($) {
 			showCancelButton: true,
 			confirmButtonColor: '#3085d6',
 			cancelButtonColor: '#d33',
-			confirmButtonText: 'Oui',
 			cancelButtonText: 'Non',
+			confirmButtonText: 'Oui',
 			confirmButtonClass: 'btn btn-success',
 			cancelButtonClass: 'btn btn-danger',
 			buttonsStyling: false,
-			reverseButtons: true
+			reverseButtons: false
 		}).then(function(data) {
 			if (data.value) {
 				$.ajax({
@@ -52,7 +52,7 @@ jQuery(function($) {
 				// 'close', and 'timer'
 			} else if (data.dismiss === 'cancel') {
 				swal(
-					'Cancelled',
+					'Annulé',
 					'Your imaginary file is safe :)',
 					'error'
 				);

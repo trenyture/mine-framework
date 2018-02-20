@@ -3,9 +3,9 @@
 	/**
 	* HOME CONTROLLER
 	*/
-	class HomeController{
+	class HomeController extends Controller{
 
-		public static function view($req, $res, $serv, $app)
+		public function view()
 		{
 			$params = [
 				'datas'=> [
@@ -13,7 +13,7 @@
 					'name'=>'Jennifer Legrand'
 				],
 			];
-			return $app->twig->render('home.html', $params);
+			return $this->render('home.html', $params);
 		}
 
 	}

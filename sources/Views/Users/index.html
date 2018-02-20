@@ -1,0 +1,40 @@
+{% extends "_wireframe.html" %}
+
+{% block content %}
+	<div class="row">
+		<section class='col-xs-12'>
+			<h1>{{ datas.pageTitle }}</h1>
+			<a href="/users/register">Créer un nouvel Utilisateur</a>
+			<table class="table">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Nom</th>
+						<th>E-mail</th>
+						<th>Date Création</th>
+						<th>#</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for user in datas.users %}
+						<tr>
+							<th>{{ user.getIdUser() }}</th>
+							<th>{{ user.getNomUser() }} {{ user.getPrenomUser() }}</th>
+							<th>{{ user.getEmailUser() }}</th>
+							<th>{{ user.getDateCreationUser() }}</th>
+							<th>
+								<a href="/users/{{ user.getIdUser() }}" class="btn btn-primary">Voir</a>
+								<a href="/users/edit/{{ user.getIdUser() }}" class="btn btn-secondary">Modifier</a>
+								<a class="btn btn-danger delete-user" href="#" data-postid="{{ datas.users.getIdUser() }}">Supprimer</a>
+							</th>
+						</tr>
+					{% else %}
+						<tr>
+							<td colspan="5">Il n'y a aucun user pour le moment. Veuillez en créer un!</td>
+						</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</section>
+	</div>
+{% endblock %}

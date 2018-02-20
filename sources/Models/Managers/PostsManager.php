@@ -4,8 +4,7 @@
 * Posts Manager
 */
 
-class PostsManager extends Manager
-{
+class PostsManager extends Manager{
 
 	public function add(Post $post)
 	{
