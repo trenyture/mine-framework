@@ -1,7 +1,4 @@
 <?php
-
-	use Medoo\Medoo;
-
 	/**
 	* Database Class make the connection with DataBase
 	*/
@@ -31,15 +28,6 @@
 		{
 			try {
 				return new PDO('mysql:host='.$this->_host.';dbname='.$this->_bdd.';charset=utf8', $this->_user, $this->_pass);
-				// return new Medoo([
-				// 	'database_type' => 'mysql',
-				// 	'database_name' => $this->_bdd,
-				// 	'server' => $this->_host,
-				// 	'username' => $this->_user,
-				// 	'password' => $this->_pass,
-				// 	'charset' => 'utf8'
-				// ]);
-				
 			} catch (PDOException $e) {
 				print "Error!: " . $e->getMessage() . "<br/>";
 				die();

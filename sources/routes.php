@@ -25,21 +25,13 @@
 	/* Home Page */
 	Router::get('/', 'HomeController@view');
 
-	/* Users */
-	Router::group(['prefix' => '/users'], function() {
-		Router::get('/{id?}', 'UsersController@view')->where(['id' => '[0-9]+']);
-		Router::match(['get', 'post'], '/register', 'UsersController@register');
-		Router::match(['get', 'patch'], '/edit/{id?}', 'UsersController@edit')->where(['id' => '[0-9]+']);
-		Router::delete('/delete/{id}', 'UsersController@delete')->where(['id' => '[0-9]+']);
-	});
-
 	/* Posts */
-	// Router::group(['prefix' => '/posts'], function() {
-	// 	Router::get('/{id?}', 'PostsController@view')->where(['id' => '[0-9]+']);
-	// 	Router::match(['get', 'post'], '/create', 'PostsController@create');
-	// 	Router::match(['get', 'patch'], '/edit/{id?}', 'PostsController@edit')->where(['id' => '[0-9]+']);
-	// 	Router::delete('/delete/{id?}', 'PostsController@delete')->where(['id' => '[0-9]+']);
-	// });
+	Router::group(['prefix' => '/posts'], function() {
+		Router::get('/{id?}', 'PostsController@view')->where(['id' => '[0-9]+']);
+		Router::match(['get', 'post'], '/create', 'PostsController@create');
+		Router::match(['get', 'patch'], '/edit/{id?}', 'PostsController@edit')->where(['id' => '[0-9]+']);
+		Router::delete('/delete/{id}', 'PostsController@delete')->where(['id' => '[0-9]+']);
+	});
 
 ?>
 

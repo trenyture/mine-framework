@@ -2,7 +2,6 @@
     "name": "simon/marketplace",
     "require": {
         "twig/twig": "^2.0",
-        "pecee/simple-router": "3.4.10.1",
-        "catfan/medoo": "^1.5"
+        "pecee/simple-router": "3.4.10.1"
     }
 }
