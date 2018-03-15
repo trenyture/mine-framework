@@ -1,6 +1,6 @@
 /* variables de fonts */
 @include font-face("icomoon", "../fonts/icomoon", 500, normal, eot svg woff ttf);
-
+@include font-face("OpenSans", "../fonts/OpenSans", 500, normal, woff woff2 ttf);
 
 /* Icones */
 [class^="icon-"], [class*=" icon-"] {

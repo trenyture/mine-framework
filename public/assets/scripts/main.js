@@ -1,1 +1,1 @@
-jQuery(function(e){console.log("Bienvenue sur la Marketplace de U'RSELF!")});
+jQuery(function(t){if(t('meta[charset="toastr-alert"]').length>0){var a=t('meta[charset="toastr-alert"]'),e=a.data("typealert")||"info",r=a.data("titlealert")||"",i=a.data("contentalert")||"",o=parseInt(a.data("timeralert"))||3e3;t.toast({heading:r,text:i,icon:e,hideAfter:o,position:"top-right",showHideTransition:"slide"}),t('meta[charset="toastr-alert"]').remove()}});

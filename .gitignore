@@ -79,7 +79,7 @@ package-lock.json
 *.css.map
 
 ### Databse Config ###
-/sources/configDB.json
+/configs/configDB.json
 
 
 # End of https://www.gitignore.io/api/node,sass,composer

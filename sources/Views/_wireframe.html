@@ -6,57 +6,159 @@
 	<meta charset="utf-8">
 	<title>{{ (datas.pageTitle is defined and datas.pageTitle is not empty) ? "#{datas.pageTitle} - " : "" }}U'RSELF</title>
 	<!-- FAVICON -->
-	<link rel="icon" type="image/png" href="assets/images/favicon.png">
+	<link rel="icon" type="image/png" href="/assets/images/favicon.png">
 	<!-- CSS -->
 	<link rel="stylesheet" type="text/css" href="/assets/styles/vendors.min.css">
+	<link rel="stylesheet" type="text/css" href="/assets/styles/wireframe.css">
 	<link rel="stylesheet" type="text/css" href="/assets/styles/main.css">
+
+	{%if viewNotification is defined %}
+		<meta charset="toastr-alert"
+			{%if viewNotification.title is defined %}
+				data-titlealert="{{viewNotification.title}}"
+			{%endif%}
+			{%if viewNotification.content is defined %}
+				data-contentalert="{{viewNotification.content}}"
+			{%endif%}
+			{%if viewNotification.timer is defined %}
+				data-timeralert="{{viewNotification.timer}}"
+			{%endif%}
+			{%if viewNotification.type is defined %}
+				data-typealert="{{viewNotification.type}}"
+			{%endif%}
+		>
+	{%endif%}
+
 {% endblock %}
 </head>
 <body>
-	<main {{ (datas.bodyId is defined and datas.bodyId is not empty) ? "id='#{datas.bodyId}'" : "" }}>
-		<div class="container">
-
-			{% block topmenu %}
+		<div class="container-fluid">
+			{% block menubarre %}
+				<!--HEADER-->
 				<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-					<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-						<span class="navbar-toggler-icon"></span>
-					</button>
-					<a class="navbar-brand" href="/">U'RSELF</a>
 
-					<div class="collapse navbar-collapse" id="navbarSupportedContent">
-						<ul class="navbar-nav mr-auto">
-							<li class="nav-item">
-								<a class="nav-link" href="/posts">Posts</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="/users">Utilisateurs</a>
-							</li>
-						</ul>
-						<form class="form-inline my-2 my-lg-0">
-							<input class="form-control mr-sm-2" type="text" placeholder="Search">
-							<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+					<!--LOGO-->
+					<div class="col-md-2 pl-0 ml-3">
+						<img src="/assets/images/URSELF_LOGO_SMALL.png" alt="U'R Self - Easy Brand Management">
+					</div>
+					<!--/LOGO-->
+
+					<!--BARRE DE RECHERCHE-->
+					<div class="col-md-3  marge">
+						<form name="search" method="get" action="search">
+							<nav class="navbar navbar-light bg-light">
+								<form class="form-inline">
+									<div class="input-group">
+										<input type="text" class="form-control" placeholder="Recherche" aria-label="Username" aria-describedby="basic-addon1">
+										<div class="input-group-prepend">
+											<span class="input-group-text" id="basic-addon1"><i class="fa fa-search" aria-hidden="true"></i></span>
+										</div>
+									</div>
+								</form>
+							</nav>
 						</form>
 					</div>
+					<!--/BARRE DE RECHERCHE-->
+
+					<!--ICON MENU-->
+					<div class="col-md-2 menudroit marge">
+						<div class="row">
+							<div class="col-md-6 menudroiticon text-right">
+								<div class="col-md-12 menuicon fonts">
+									<i class="fa fa-shopping-basket fa-2x" aria-hidden="true"></i>
+								</div>
+								<div class="col-md-12">
+									<a href="" data-toggle="dropdown" class="fonts">Panier&nbsp;<i class="fas fa-caret-down"></i><span class="caret"></span></a>
+									<div class="row dropdown-menu text-left" style="width: 250px">
+										<div class="col-md-12">
+											<div class="row">
+												<div class="col-md-12 mt-3 font marge_six">
+													<p class="margeleft fonts"><strong>Total fournisseur : 8,99€</strong></p>
+													<p class="margeleft mt-1 fonts"><strong>Article : 1</strong></p> 
+												</div>
+											</div>
+
+											<div class="row" >
+												<div class="col-md-12  text-right mb-3 ml-2">
+													<a href="#"><button type="button" class="btn btn-warning text-white mt-5 mr-3">Acheter</button></a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<!--Sous-menu compte-->
+							<div class="col-md-6 menudroiticon text-left">
+								<div class="col-md-12 menuicone fonts">
+									<i class="fa fa-user fa-2x" aria-hidden="true"></i>
+								</div>
+								<nav class="col-md-12">
+									<a href="#"  data-toggle="dropdown" class="fonts">Compte&nbsp;<i class="fas fa-caret-down"></i><span class="caret"></span></a>
+									<ul class="dropdown-menu text-left">
+										<li><a href="#"><i class="fa fa-fw fa-magnet"></i>&nbsp;Mon compte</a></li>
+										<li><a href="/account/magasins/"><i class="fa fa-fw fa-star"></i>&nbsp;Mes magasin</a></li>
+										<!-- <li><a href="/account/adresses/"><i class="fa fa-fw fa-bullhorn"></i>&nbsp;Mes adresse</a></li> -->
+										<li><a href="#"><i class="fa fa-fw fa-check"></i>&nbsp;Mes commandes</a></li>
+										<li><a href="#"><i class="fa fa-fw fa-list"></i>&nbsp;Mes fournisseurs</a></li>
+										<li><a href="/logout"><button type="button" class="btn">Déconnexion</button></a></li>
+									</ul>
+								</nav>
+							</div>
+							<!--/Sous-menu compte-->
+						</div>
+						<!--/row-->
+					</div>
+					<!--ICON MENU-->
 				</nav>
+				<!--/HEADER-->
+
+
+				<!--BARRE DE  MENU-->
+				<ul class="nav justify-content-center">
+					<li class="nav-item barremenu">
+						<a class="nav-link active" href="#"><strong>Flyers</strong></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#"><strong>Affiche</strong></a>
+					</li>
+					<li class="nav-item barremenu">
+						<a class="nav-link" href="#"><strong>T-shirt</strong></a>
+					</li>
+				</ul>
+				<!--/BARRE DE  MENU-->
 			{% endblock %}
+
 
 			{% block content %}
 				<p> Hello World </p>
 			{% endblock %}
 
-			<footer class="row">
-				<div class="col-xs-12">
-					<p>Site réalisé par U'RSELF</p>
-				</div>
-			</footer>
-		</div> <!-- /.container -->
 
 		{% block footer %}
+			<div id="footer" class="clearfix">
+				<div class="footer">
+					<div class="container">
+						<div class="spotlight row">
+							<div class="col-md-3 margin">
+								<img src="assets/images/URSELF_LOGO_SMALL_DARK.png" alt="U'RSelf Easy Brand Management"/>
+							</div>
+						</div>
+
+						<div class="row copyright">
+							<div class="col-md-12">
+								<span>&copy;2018 - U'RSelf, 3 rue du commandant Cousteau 33 100 BORDEAUX</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 			<!-- JS -->
 			<script type="text/javascript" src="/assets/scripts/vendors.min.js"></script>
 			<script type="text/javascript" src="/assets/scripts/functions.js"></script>
 			<script type="text/javascript" src="/assets/scripts/main.js"></script>
 		{% endblock %}
-	</main>
+	</div> <!-- /.container -->
+
 </body>
 </html>
